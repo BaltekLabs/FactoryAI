@@ -1,0 +1,16 @@
+---
+applications:
+- instances: 1
+  timeout: 180
+  name: FactoryAI
+  buildpack: python_buildpack
+  command: python manage.py start 0.0.0.0:$PORT
+  memory: 256M
+  domain: mybluemix.net
+  host: baltek-systems
+  services:
+    - factoryai-discovery-1519239959301
+    - factoryai-pm-20-1519240227471
+  env:
+    FLASK_APP : server
+    FLASK_DEBUG : false
